@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InventoryPage">
+
+    <!-- APP BAR -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/inventoryToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@android:color/white">
+
+            <!-- ICON -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/group_1"
+                android:contentDescription="App Icon"/>
+
+            <!-- TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:text="  FridgeBuddy"
+                android:textSize="20sp"
+                android:textColor="#E2852E"
+                android:fontFamily="@font/rammetto_one"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- PAGE CONTENT (below toolbar) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="104dp">
+
+        <View
+            android:id="@+id/icon_bg"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/items_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_box"
+            app:layout_constraintBottom_toBottomOf="@id/icon_bg"
+            app:layout_constraintEnd_toEndOf="@id/icon_bg"
+            app:layout_constraintStart_toStartOf="@id/icon_bg"
+            app:layout_constraintTop_toTopOf="@id/icon_bg"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/label_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Items"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/icon_bg"
+            app:layout_constraintTop_toTopOf="@id/icon_bg" />
+
+        <TextView
+            android:id="@+id/count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/label_items"
+            app:layout_constraintTop_toBottomOf="@id/label_items" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Add your inventory UI here -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
